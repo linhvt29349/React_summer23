@@ -1,0 +1,118 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Product 1",
+      "price": "100000",
+      "image": "https://picsum.photos/200/100 ",
+      "description": "Description 1",
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "price": 200,
+      "image": "https://picsum.photos/200/100 ",
+      "description": "Description 2",
+      "categoryId": 2
+    },
+    {
+      "name": "Product 5",
+      "price": "420",
+      "image": "https://picsum.photos/204/100",
+      "description": "Desc 5",
+      "categoryId": "1",
+      "id": 4
+    },
+    {
+      "name": "Conan tái bản 1",
+      "price": "1002",
+      "image": "https://picsum.photos/230/300",
+      "description": "grs",
+      "categoryId": "1",
+      "id": 7
+    },
+    {
+      "name": "Conan",
+      "price": "1002",
+      "image": "https://picsum.photos/230/300",
+      "description": "grs",
+      "categoryId": "1",
+      "id": 8
+    },
+    {
+      "name": "Bánh ngọt",
+      "price": "1002",
+      "image": "https://picsum.photos/210/300",
+      "description": "grs",
+      "categoryId": "2",
+      "id": 9
+    },
+    {
+      "name": "Nước ngọt",
+      "price": "202",
+      "image": "https://picsum.photos/230/310",
+      "description": "grs",
+      "categoryId": "4",
+      "id": 10
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Category 1"
+    },
+    {
+      "id": 2,
+      "name": "Category 2"
+    },
+    {
+      "name": "Category 3",
+      "id": 3
+    },
+    {
+      "name": "Category 4",
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "id": 1691399936567,
+      "name": "Gà con",
+      "email": "ga@gmail.com",
+      "password": "$2a$10$SER8inLeJoAHa85cJFU4JO7dG61jiJHCy4Nx7H56oa2r.5Kr8gAha",
+      "roleId": 2
+    },
+    {
+      "id": 1691401419992,
+      "name": "Admin1",
+      "email": "admin1@gmail.com",
+      "password": "$2a$10$rlcciO40XEwBCHONWfcazu9J7VnlYsFhRs/A/1I9GdHdrolX4iSLi",
+      "roleId": 1
+    },
+    {
+      "name": "Hương",
+      "email": "huong@gmail.com",
+      "password": "$2a$10$947c.HXCu0.bY09OCl9wEur3bbW5iWtvKyVK0ADKyu0YL8qbSy.gK",
+      "roleId": 2,
+      "id": 1691401419993
+    },
+    {
+      "id": 1691402593302,
+      "name": "hoa",
+      "email": "hoa@gmail.com",
+      "password": "$2a$10$7ois3ZaGbL/q9xXXj9EmbORW9iCMULUuS50zsRy.X3lDSYmxu.2ga",
+      "roleId": 2
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "admin"
+    },
+    {
+      "id": 2,
+      "name": "user"
+    }
+  ]
+}
