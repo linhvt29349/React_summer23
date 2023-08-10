@@ -8,6 +8,7 @@ import bcrypt from 'bcryptjs-react'
 
 
 type User = {
+    users: IUser[],
     roles: IRole[],
     onAdd: (product: IUser) => void
 }
@@ -16,12 +17,17 @@ const AddUser = (props: User) => {
     const navigate = useNavigate();
     const onFinish = (values: IUser) => {
         const { error } = SchemaUser.validate(values)
+        const test = props.users.find((user) => user.email === values.email)
         const user = {
             id: new Date().getTime(),
             name: values.name,
             email: values.email,
             password: bcrypt.hashSync(values.password, 10),
             roleId: values.roleId
+        }
+        if (test) {
+            alert("Account is already!")
+            return;
         }
         if (error) {
             alert(error.message)

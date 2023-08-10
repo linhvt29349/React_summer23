@@ -13,7 +13,6 @@ import HomePage from "./Pages/Clients/Homepage";
 import AdminPageProduct from "./Pages/Admin/Products/Dashboard";
 import AddProductAdmin from "./Pages/Admin/Products/Add";
 import UpdateProducts from "./Pages/Admin/Products/Update";
-import ProductsPage from "./Pages/Clients/ProductPage";
 import AdminPageCategories from "./Pages/Admin/Categories/Dashboard";
 import AdminPageUser from "./Pages/Admin/User/Dashboard";
 import AddCategories from "./Pages/Admin/Categories/Add";
@@ -48,7 +47,7 @@ const App = () => {
   }
   const onhandleDeleteUser = (id: number) => {
     deleteUser(id)
-    alert("Xóa tài khoản thành công!")
+    alert("Account deletion successful!")
   }
 
   //Categories
@@ -63,7 +62,7 @@ const App = () => {
   }
   const onhandleDeleteCategory = (id: number) => {
     deleteCategory(id)
-    alert("Xóa danh mục sản phẩm thành công!")
+    alert("Catalog delete successful!")
   }
 
   //Products
@@ -78,7 +77,7 @@ const App = () => {
   }
   const onhandleDeleteProduct = (id: number) => {
     deleteProduct(id)
-    alert("Xóa sản phẩm thành công!")
+    alert("Product deletion successful!")
   }
   //Auth
   const onhandleSignUp = (data: IUser) => {
@@ -101,8 +100,8 @@ const App = () => {
           <Route index element={<AdminPageProduct products={products} onDelete={onhandleDeleteProduct} />} />
           <Route path="product/add" element={<AddProductAdmin onAdd={onhandleAddProduct} categories={category} />}></Route>
           <Route path="categories/list" element={<AdminPageCategories categories={category} onDelete={onhandleDeleteCategory} />} />
-          <Route path="/admin/categories/list/list/add" element={<AddCategories onAdd={onhandleAddCategory} />}></Route>
-          <Route path="/admin/user/list/list/add" element={<AddUser onAdd={onhandleAddUser} roles={roles} />}></Route>
+          <Route path="/admin/categories/list/list/add" element={<AddCategories onAdd={onhandleAddCategory} categories={category} />}></Route>
+          <Route path="/admin/user/list/list/add" element={<AddUser onAdd={onhandleAddUser} roles={roles} users={users} />}></Route>
           <Route path="user/list" element={<AdminPageUser users={users} onDelete={onhandleDeleteUser} />} />
           <Route path="product/update/:id" element={<UpdateProducts onEdit={onhandleUpdateProduct} products={products} categories={category} />} />
           <Route path="/admin/categories/list/categoty/update/:id" element={<UpdateCategories onEdit={onhandleUpdateCategory} categories={category} />} />

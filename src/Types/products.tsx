@@ -9,10 +9,10 @@ export const SchemaProduct = Joi.object({
         "string.empty": "{lable}Required field!",
         "string.min": "{lable}Enter price as a positive number!"
     }),
-    image: Joi.string().required().messages({
+    image: Joi.string().trim().required().messages({
         "string.empty": "{lable}Required field!"
     }),
-    description: Joi.string().required().messages({
+    description: Joi.string().trim().required().messages({
         "string.empty": "{lable}Required field!"
     }),
     categoryId: Joi.number()

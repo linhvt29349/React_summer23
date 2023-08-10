@@ -1,26 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { IProps, IFormInput } from "../../../Types/categories";
+import { IFormInput, ICategories } from "../../../Types/categories";
 import { SchemaCategory } from "../../../Types/categories";
+type Categoty = {
+    categories: ICategories[],
+    onAdd: (product: ICategories) => void
+}
 
-
-const AddCategories = (props: IProps) => {
+const AddCategories = ({ categories, onAdd }: Categoty) => {
     const navigate = useNavigate();
     const { register, handleSubmit } = useForm<IFormInput>()
 
     const onFinish: SubmitHandler<IFormInput> = (values: any) => {
+        const test = categories.find(c => c.name === values.name)
         const { error } = SchemaCategory.validate(values)
+
+        if (test) {
+            alert("Category is already!")
+            return;
+        }
         if (error) {
             alert(error.message)
         } else {
-            props.onAdd(values);
+            onAdd(values);
             alert("Catalog added successfully!")
             navigate("/admin/categories/list")
         }
     };
-
-
     return (
         <div>
             <div>
