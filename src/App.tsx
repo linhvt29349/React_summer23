@@ -46,8 +46,12 @@ const App = () => {
     addUser(user)
   }
   const onhandleDeleteUser = (id: number) => {
-    deleteUser(id)
-    alert("Account deletion successful!")
+    if (confirm('Are you sure you want to delete this user') === true) {
+      deleteUser(id)
+      alert("Account deletion successful!")
+    } else {
+      return;
+    }
   }
 
   //Categories
@@ -61,8 +65,13 @@ const App = () => {
     addCategory(product)
   }
   const onhandleDeleteCategory = (id: number) => {
-    deleteCategory(id)
-    alert("Catalog delete successful!")
+    if (confirm('Are you sure you want to delete this category') === true) {
+      deleteCategory(id)
+      alert("Catalog delete successful!")
+    } else {
+      return;
+    }
+
   }
 
   //Products
@@ -76,8 +85,13 @@ const App = () => {
     addProduct(product)
   }
   const onhandleDeleteProduct = (id: number) => {
-    deleteProduct(id)
-    alert("Product deletion successful!")
+    if (confirm('Are you sure you want to delete') === true) {
+      deleteProduct(id)
+      alert("Product deletion successful!")
+    } else {
+      return;
+    }
+
   }
   //Auth
   const onhandleSignUp = (data: IUser) => {
